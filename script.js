@@ -17,7 +17,7 @@ let playerSelection = prompt("Rock, Paper, or Scissors?");
 playerSelection = playerSelection.toLowerCase()
 
 //create function that declares winner of the round
-function game (computerSelection, playerSelection) {
+function playRound (computerSelection, playerSelection) {
 
     if (computerSelection === playerSelection) 
         return "It's a tie!";
@@ -47,8 +47,49 @@ function game (computerSelection, playerSelection) {
             return "Scissors cut Paper, Computer Wins!";
 }
 
-game();
 
-console.log(game(computerSelection, playerSelection));
+
+//playRound();
+
+//console.log(playRound(computerSelection, playerSelection));
 
 //create function that collects win data to keep score and declare winner or loser of five games
+let playerScore = 0;
+let computerScore = 0;
+let tie = 0;
+
+function game() {
+
+    playRound();
+    
+    console.log(playRound(computerSelection, playerSelection));
+
+    let result = playRound(computerSelection, playerSelection);
+
+    if (result === "It's a tie!") {
+        tie++;
+    }   else if (result === "Rock smashes Scissors, Computer Wins!") {
+        computerScore++;
+    }   else if (result === "Paper covers Rock, You win!") {
+        playerScore++;
+    }   else if (result === "Paper covers Rock, Computer Wins!") {
+        computerScore++;
+    }   else if (result === "Scissors cut Paper, You win!") {
+        playerScore++;
+    }   else if (result ==="Rock smashes Scissors, You win!") {
+        playerScore++;
+    }   else if(result === "Scissors cut Paper, Computer Wins!") {
+        computerScore++;
+    }
+console.log(computerScore);
+console.log(playerScore);
+console.log(tie);
+
+    }
+    
+
+    
+    
+
+
+game();
