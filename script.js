@@ -9,43 +9,44 @@ if (computerSelection == 1) {
 } else  {
     computerSelection = "Scissors";
 }
-    
+console.log(computerSelection);
+
 //collect input from user for their choice
 let playerSelection = prompt("Rock, Paper, or Scissors?");
 
 //create function that declares winner of the round
 function game (computerSelection, playerSelection) {
-    if (computerSelection == playerSelection) {
+
+    if (computerSelection === playerSelection) 
         return "It's a tie!";
-    }
 
-    if (playerSelection == "Rock") {
-        if (computerSelection == "Scissors") {
-            return "Computer Wins!";
-        } else {
-            return "Player Wins!";
-        }
-    }
+    else if (computerSelection == "Rock" && playerSelection == "Scissors")
+        
+            return "Rock smashes Scissors, Computer Wins!";
 
-    if (playerSelection == "Paper") {
-        if (computerSelection == "Scissors") {
-            return "Computer Wins!";
-        } else {
-            return "Player Wins!";
-        }
-    }
+    else if (computerSelection == "Rock" && playerSelection == "Paper")
+        
+            return "Paper covers Rock, You win!";
 
-    if (playerSelection == "Scissors") {
-        if (computerSelection == "Rock") {
-        return "Computer Wins!";
-        } else {
-            return "Player Wins!";
-        }
-    }
+    else if (computerSelection == "Paper" && playerSelection == "Rock")
+        
+            return "Paper covers Rock, Computer Wins!";
+
+    else if (computerSelection == "Paper" && playerSelection == "Scissors")
+        
+            return "Scissors cut Paper, You win!";
+
+    else if (computerSelection == "Scissors" && playerSelection == "Rock")
+        
+            return "Rock smashes Scissors, You win!";
+
+    else if (computerSelection == "Scissors" && playerSelection == "Paper")
+        
+            return "Scissors cut Paper, Computer Wins!";
 }
 
 game();
 
-console.log(game(playerSelection,computerSelection))
+console.log(game(computerSelection, playerSelection));
 
 //create function that collects win data to keep score and declare winner or loser of five games
